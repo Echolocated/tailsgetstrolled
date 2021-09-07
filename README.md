@@ -1,4 +1,8 @@
-# Friday Night Funkin: Andromeda Engine
+# Friday Night Funkin: Andromeda Engine -> TAILS GETS TROLLED, BITCH
+
+Hey, assholes! Echolocated here. I coded this mod pretty much on my own, with the help of code from Retrospecter God Eater made by Nebula the Zorua and Snow.
+I kinda blatantly stole the code from the story menu state changing automatically during the week, but Nebula gave permission so it's all good (i think? idk bro)
+Uhhhh more shit coming soon, I'm learning how to code n shit so maybe things will turn out epicly. Love you byeeeee.
 
 Made as an alternative to other engines because im a lil' bitch and thought I could take a shot, so I did.
 - Fully rebindable controls, a brand new input system based on other rhythm games' (Though you can goto week 7's)
