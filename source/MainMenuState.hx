@@ -26,6 +26,7 @@ import Note;
 class MainMenuState extends MusicBeatState
 {
 	var curSelected:Int = 0;
+	var isCutscene:Bool = false;
 	public var currentOptions:Options;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
@@ -148,7 +149,22 @@ class MainMenuState extends MusicBeatState
 									PlayState.SONG = Song.loadFromJson("fresh-hard", "fresh");
 									PlayState.storyWeek = 0;
 									PlayState.campaignScore = 0;
-									LoadingState.loadAndSwitchState(new PlayState(), true);
+									var video:MP4Handler = new MP4Handler();
+									if (!isCutscene) // Checks if the current week is Tutorial.
+									{
+										video.playMP4(Paths.video('tailsGetsTrolled'), new PlayState()); 
+										isCutscene = true;
+									}
+									else
+									{
+										new FlxTimer().start(1, function(tmr:FlxTimer)
+										{
+											if (isCutscene)
+												video.onVLCComplete();
+
+											LoadingState.loadAndSwitchState(new PlayState(), true);
+										});
+									}
 								case 'freeplay':
 									FlxG.switchState(new FreeplayState());
 									trace("Freeplay Menu Selected");
