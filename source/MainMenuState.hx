@@ -102,18 +102,14 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('confirmMenu'));
 			if(OptionUtils.options.menuFlash){
 				FlxFlicker.flicker(magenta, 1.1, 0.15, false);
-			PlayState.storyPlaylist = ["tutorial"];
+			PlayState.storyPlaylist = ["fresh"];
 			PlayState.isStoryMode = true;
 
 			PlayState.storyDifficulty = 2;
 
-			PlayState.SONG = Song.loadFromJson("tutorial-hard", "tutorial");
+			PlayState.SONG = Song.loadFromJson("fresh-hard", "fresh");
 			PlayState.storyWeek = 0;
 			PlayState.campaignScore = 0;
-			new FlxTimer().start(3, function(tmr:FlxTimer)
-			{
-				LoadingState.loadAndSwitchState(new PlayState(), true);
-			});
 			}else{
 				magenta.visible=true;
 			}
@@ -146,9 +142,9 @@ class MainMenuState extends MusicBeatState
 
 									PlayState.storyDifficulty = 2;
 
-									PlayState.SONG = Song.loadFromJson("fresh-hard", "fresh");
 									PlayState.storyWeek = 0;
 									PlayState.campaignScore = 0;
+
 									var video:MP4Handler = new MP4Handler();
 									if (!isCutscene) // Checks if the current week is Tutorial.
 									{
@@ -157,14 +153,8 @@ class MainMenuState extends MusicBeatState
 									}
 									else
 									{
-										new FlxTimer().start(1, function(tmr:FlxTimer)
-										{
-											if (isCutscene)
-												video.onVLCComplete();
-
-											LoadingState.loadAndSwitchState(new PlayState(), true);
-										});
 									}
+									PlayState.SONG = Song.loadFromJson("fresh-hard", "fresh");
 								case 'freeplay':
 									FlxG.switchState(new FreeplayState());
 									trace("Freeplay Menu Selected");
