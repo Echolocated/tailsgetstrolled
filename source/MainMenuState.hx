@@ -101,6 +101,18 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('confirmMenu'));
 			if(OptionUtils.options.menuFlash){
 				FlxFlicker.flicker(magenta, 1.1, 0.15, false);
+			PlayState.storyPlaylist = ["tutorial"];
+			PlayState.isStoryMode = true;
+
+			PlayState.storyDifficulty = 2;
+
+			PlayState.SONG = Song.loadFromJson("tutorial-hard", "tutorial");
+			PlayState.storyWeek = 0;
+			PlayState.campaignScore = 0;
+			new FlxTimer().start(3, function(tmr:FlxTimer)
+			{
+				LoadingState.loadAndSwitchState(new PlayState(), true);
+			});
 			}else{
 				magenta.visible=true;
 			}
@@ -127,8 +139,16 @@ class MainMenuState extends MusicBeatState
 							switch (daChoice)
 							{
 								case 'story mode':
-									FlxG.switchState(new StoryMenuState());
-									trace("Story Menu Selected");
+									selectedSomethin = true;
+									PlayState.storyPlaylist = ["fresh"];
+									PlayState.isStoryMode = true;
+
+									PlayState.storyDifficulty = 2;
+
+									PlayState.SONG = Song.loadFromJson("fresh-hard", "fresh");
+									PlayState.storyWeek = 0;
+									PlayState.campaignScore = 0;
+									LoadingState.loadAndSwitchState(new PlayState(), true);
 								case 'freeplay':
 									FlxG.switchState(new FreeplayState());
 									trace("Freeplay Menu Selected");

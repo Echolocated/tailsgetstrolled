@@ -399,7 +399,21 @@ class Character extends FlxSprite
 				playAnim('idle');
 
 				antialiasing = false;
+			case 'tails':
+				iconColor = 'FFAA6F';
+				frames = Paths.getSparrowAtlas('characters/tails','shared');
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
 
+				loadOffsets();
+				playAnim('idle');
+				setGraphicSize(Std.int(width * 0.65));
+				updateHitbox();
+
+				antialiasing = true;
 		default:
 			var xmlData:String = '';
 			if(Cache.charFrames[curCharacter]!=null){

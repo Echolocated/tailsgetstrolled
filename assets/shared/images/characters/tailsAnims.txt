@@ -1,0 +1,5 @@
+prefix idle 24 idle
+prefix singUP 24 up
+prefix singLEFT 24 left
+prefix singDOWN 24 down
+prefix singRIGHT 24 right

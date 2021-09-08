@@ -35,6 +35,7 @@ class HealthIcon extends FlxSprite
 		animation.add('senpai', [22, 22], 0, false);
 		animation.add('senpai-angry', [22, 22], 0, false);
 		animation.add('spirit', [23, 23], 0, false);
+		animation.add('tails', [10, 11], 0, false);
 		if(animation.getByName(char)!=null)
 			animation.play(char);
 		else
