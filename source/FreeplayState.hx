@@ -101,7 +101,7 @@ class FreeplayState extends MusicBeatState
 		FlxG.stage.addEventListener(MouseEvent.MOUSE_WHEEL,scroll);
 
 		if (StoryMenuState.weekUnlocked[2] || isDebug)
-			addWeek(['Bopeebo', 'Fresh', 'Dadbattle'], 1, ['dad']);
+			addWeek(['Talentless-Fox'], 1, ['tails']);
 
 		// LOAD MUSIC
 

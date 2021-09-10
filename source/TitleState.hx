@@ -110,7 +110,7 @@ class TitleState extends MusicBeatState
 
 	var logoBl:FlxSprite;
 	var gfDance:FlxSprite;
-	var speaker:FlxSprite;
+//	var speaker:FlxSprite;
 	var danceLeft:Bool = false;
 	var titleText:FlxSprite;
 	var bg:FlxSprite;
@@ -153,7 +153,7 @@ class TitleState extends MusicBeatState
 
 		if(currentOptions.oldTitle)
 		{
-			logoBl = new FlxSprite(-150, -100);
+			logoBl = new FlxSprite(0, -250);
 			logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 			logoBl.antialiasing = true;
 			logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
@@ -176,7 +176,7 @@ class TitleState extends MusicBeatState
 			add(bgLit);
 			bgLit.visible = false;
 
-			logoBl = new FlxSprite(285, -70);
+			logoBl = new FlxSprite(300, 100);
 			logoBl.frames = Paths.getSparrowAtlas('logoBumpin');
 			logoBl.antialiasing = true;
 			logoBl.animation.addByPrefix('bump', 'logo bumpin', 24);
@@ -185,7 +185,7 @@ class TitleState extends MusicBeatState
 			logoBl.scrollFactor.set();
 			logoBl.updateHitbox();
 
-			speaker = new FlxSprite(FlxG.width * 0.5, FlxG.height * 0.4);
+		/*	speaker = new FlxSprite(FlxG.width * 0.5, FlxG.height * 0.4);
 			speaker.frames = Paths.getSparrowAtlas('titleSpeaker');
 			speaker.animation.addByPrefix('lit', 'speakers', 24);
 			speaker.animation.addByPrefix('normal', 'alt speakers', 24);
@@ -195,7 +195,7 @@ class TitleState extends MusicBeatState
 			add(speaker);
 
 			speaker.animation.play('normal',true);
-		}
+		*/}
 		//i know its wasteful but im a lazy ass
 
 		gfDance = new FlxSprite(FlxG.width * 0.4, FlxG.height * 0.07);
@@ -338,7 +338,7 @@ class TitleState extends MusicBeatState
 
 			if(!currentOptions.oldTitle)
 			{
-				speaker.animation.play('lit',true);
+				//speaker.animation.play('lit',true);
 				//bg.visible = false;
 				bgLit.visible = true;
 			}
@@ -428,7 +428,7 @@ class TitleState extends MusicBeatState
 		switch (curBeat)
 		{
 			case 1:
-				createCoolText(['ninjamuffin99', 'phantomArcade', 'kawaisprite', 'evilsk8er']);
+				createCoolText(['Echolocated', 'Bepixel', 'Hooda the Antagonist', 'Nebula the Zorua']);
 			// credTextShit.visible = true;
 			case 3:
 				addMoreText('present');
@@ -442,7 +442,7 @@ class TitleState extends MusicBeatState
 			case 5:
 				createCoolText(['In association', 'with']);
 			case 7:
-				addMoreText('newgrounds');
+				addMoreText('Lazerbot');
 				ngSpr.visible = true;
 			// credTextShit.text += '\nNewgrounds';
 			case 8:
@@ -464,13 +464,13 @@ class TitleState extends MusicBeatState
 			// credTextShit.text = "Friday";
 			// credTextShit.screenCenter();
 			case 13:
-				addMoreText('Friday');
+				addMoreText('Tails');
 			// credTextShit.visible = true;
 			case 14:
-				addMoreText('Night');
+				addMoreText('Gets');
 			// credTextShit.text += '\nNight';
 			case 15:
-				addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
+				addMoreText('Trolled'); // credTextShit.text += '\nFunkin';
 
 			case 16:
 				skipIntro();

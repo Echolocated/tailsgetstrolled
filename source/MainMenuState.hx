@@ -44,12 +44,6 @@ class MainMenuState extends MusicBeatState
 	function onMouseDown(object:FlxObject){
 		if(!selectedSomethin){
 			if(object==gfDance){
-				var anims = ["singUP","singLEFT","singRIGHT","singDOWN"];
-				var sounds = ["GF_1","GF_2","GF_3","GF_4"];
-				var anim = FlxG.random.int(0,3);
-				gfDance.holdTimer=0;
-				gfDance.playAnim(anims[anim]);
-				FlxG.sound.play(Paths.sound(sounds[anim]));
 			}else{
 				for(obj in menuItems.members){
 					if(obj==object){
@@ -84,30 +78,27 @@ class MainMenuState extends MusicBeatState
 	}
 
 	function accept(){
-		if (optionShit[curSelected] == 'donate')
+		if (optionShit[curSelected] == 'tailsGetsTrolled')
 		{
 			#if linux
-			Sys.command('/usr/bin/xdg-open', ["https://ninja-muffin24.itch.io/funkin", "&"]);
+			Sys.command('/usr/bin/xdg-open', ["http://www.tailsgetstrolled.org/ch1/", "&"]);
 			#else
-			FlxG.openURL('https://ninja-muffin24.itch.io/funkin');
+			FlxG.openURL('http://www.tailsgetstrolled.org/ch1/');
 			#end
 		}
 		else
 		{
 			if(!currentOptions.oldMenus)
-			{
-				gfDance.playAnim('cheer');
-			}
 			selectedSomethin = true;
 			FlxG.sound.play(Paths.sound('confirmMenu'));
 			if(OptionUtils.options.menuFlash){
 				FlxFlicker.flicker(magenta, 1.1, 0.15, false);
-			PlayState.storyPlaylist = ["fresh"];
+			PlayState.storyPlaylist = ["talentless-fox"];
 			PlayState.isStoryMode = true;
 
 			PlayState.storyDifficulty = 2;
 
-			PlayState.SONG = Song.loadFromJson("fresh-hard", "fresh");
+			PlayState.SONG = Song.loadFromJson("talentless-fox-hard", "talentless-fox");
 			PlayState.storyWeek = 0;
 			PlayState.campaignScore = 0;
 			}else{
@@ -137,7 +128,7 @@ class MainMenuState extends MusicBeatState
 							{
 								case 'story mode':
 									selectedSomethin = true;
-									PlayState.storyPlaylist = ["fresh"];
+									PlayState.storyPlaylist = ["talentless-fox"];
 									PlayState.isStoryMode = true;
 
 									PlayState.storyDifficulty = 2;
@@ -154,7 +145,7 @@ class MainMenuState extends MusicBeatState
 									else
 									{
 									}
-									PlayState.SONG = Song.loadFromJson("fresh-hard", "fresh");
+									PlayState.SONG = Song.loadFromJson("talentless-fox-hard", "talentless-fox");
 								case 'freeplay':
 									FlxG.switchState(new FreeplayState());
 									trace("Freeplay Menu Selected");
@@ -175,7 +166,6 @@ class MainMenuState extends MusicBeatState
 								case 'freeplay':
 									FlxG.switchState(new FreeplayState());
 									trace("Freeplay Menu Selected");
-
 								case 'options':
 									FlxG.switchState(new OptionsMenu());
 							}
@@ -303,8 +293,7 @@ class MainMenuState extends MusicBeatState
 	override function beatHit(){
 		super.beatHit();
 		if(gfDance!=null){
-			if (!gfDance.animation.curAnim.name.startsWith("sing") && gfDance.animation.curAnim.name!="cheer")
-				gfDance.dance();
+			gfDance.dance();
 		}
 	}
 	override function update(elapsed:Float)
