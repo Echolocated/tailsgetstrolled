@@ -5,7 +5,7 @@ import flixel.FlxSprite;
 import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxSpriteGroup;
-
+import Options;
 // TODO: have the receptor manage its own notes n shit
 
 class Receptor extends FlxSprite {
