@@ -45,6 +45,8 @@ class HealthIcon extends FlxSprite
 			animation.play(char);
 		else
 			animation.play("face");
+
+		animation.curAnim.curFrame=0;
 	}
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
