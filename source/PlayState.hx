@@ -1966,7 +1966,6 @@ class PlayState extends MusicBeatState
 
 	function resyncVocals():Void
 	{
-		trace("resync",FlxG.sound.music.time,Conductor.rawSongPos);
 		if(!dontSync){
 			trace("RESYNCING");
 			vocals.pause();
@@ -1976,8 +1975,6 @@ class PlayState extends MusicBeatState
 			vocals.time = Conductor.rawSongPos;
 			Conductor.songPosition=Conductor.rawSongPos+currentOptions.noteOffset;
 			vocals.play();
-		}else{
-			trace("WTF???");
 		}
 	}
 
@@ -2628,7 +2625,6 @@ class PlayState extends MusicBeatState
 
 					if (daNote.tooLate || daNote.wasGoodHit && currentOptions.downScroll && daNote.y>FlxG.height+daNote.height || daNote.wasGoodHit && !currentOptions.downScroll && daNote.y<-daNote.height )
 					{
-						trace(daNote.tooLate);
 						if (daNote.tooLate)
 						{
 							//health -= 0.0475;
@@ -3331,7 +3327,6 @@ class PlayState extends MusicBeatState
 		}else if(currentOptions.pauseHoldAnims && !canHold){
 			boyfriend.playAnim(anim,true);
 			if(note.holdParent ){
-				trace("BF HOLDING",note.holdParent,note.isSustainNote,note.animation.curAnim.name);
 				boyfriend.holding=true;
 			}else{
 				boyfriend.holding=false;

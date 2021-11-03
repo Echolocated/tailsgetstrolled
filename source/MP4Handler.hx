@@ -128,6 +128,7 @@ class MP4Handler
 	public function onVLCComplete()
 	{
 		FlxG.autoPause = true;
+		FlxG.stage.removeEventListener(Event.ENTER_FRAME, update);
 		vlcBitmap.stop();
 
 		// Clean player, just in case! Actually no.
@@ -168,9 +169,8 @@ class MP4Handler
 				onVLCComplete();
 			}
 		}
-		trace(FlxG.sound.volume + 0.3);
 		vlcBitmap.volume = FlxG.sound.volume + 0.3; // shitty volume fix. then make it louder.
-		if (FlxG.sound.volume <= 0.1) vlcBitmap.volume = 0;
+		if (FlxG.sound.volume < 0.1) vlcBitmap.volume = 0;
 	}
 	#end
 
