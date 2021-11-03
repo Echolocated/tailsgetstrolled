@@ -61,6 +61,32 @@ class Character extends FlxSprite
 
 				flipX = true;
 
+			case 'bf-better':
+				iconColor = '31B0D1';
+				var tex = Paths.getSparrowAtlas('characters/BOYFRIEND2','shared');
+				frames = tex;
+				animation.addByPrefix('idle', 'BF idle dance instance', 24, false);
+				animation.addByPrefix('singUP', 'BF NOTE UP instance', 24, false);
+				animation.addByPrefix('singRIGHT', 'BF NOTE RIGHT instance', 24, false);
+				animation.addByPrefix('singLEFT', 'BF NOTE LEFT instance', 24, false);
+				animation.addByPrefix('singDOWN', 'BF NOTE DOWN instance', 24, false);
+				animation.addByPrefix('singUPmiss', 'BF NOTE UP MISS instance', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'BF NOTE LEFT MISS instance', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'BF NOTE RIGHT MISS instance', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'BF NOTE DOWN MISS instance', 24, false);
+				animation.addByPrefix('hey', 'BF HEY instance', 24, false);
+
+				animation.addByPrefix('firstDeath', "BF dies instance", 24, false);
+				animation.addByPrefix('deathLoop', "BF Dead Loop instance", 24, true);
+				animation.addByPrefix('deathConfirm', "BF Dead confirm instance", 24, false);
+
+				animation.addByPrefix('scared', 'BF idle shaking instance', 24);
+
+				loadOffsets();
+				playAnim('idle');
+
+				flipX = true;
+
 			case 'bf-car':
 				iconColor = '31B0D1';
 				var tex = Paths.getSparrowAtlas('characters/bfCar','shared');
@@ -411,6 +437,66 @@ class Character extends FlxSprite
 				loadOffsets();
 				playAnim('idle');
 				setGraphicSize(Std.int(width * 0.65));
+				updateHitbox();
+
+				antialiasing = true;
+			case 'swagtails':
+				iconColor = 'FFAA6F';
+				frames = Paths.getSparrowAtlas('characters/swagtails','shared');
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
+
+				loadOffsets();
+				playAnim('idle');
+				setGraphicSize(Std.int(width * 0.65));
+				updateHitbox();
+
+				antialiasing = true;
+			case 'sonic':
+				iconColor = 'FFAA6F';
+				frames = Paths.getSparrowAtlas('characters/sonic','shared');
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
+
+				loadOffsets();
+				playAnim('idle');
+				setGraphicSize(Std.int(width * 0.7));
+				updateHitbox();
+
+				antialiasing = true;
+			case 'sonic-forced':
+				iconColor = 'FFAA6F';
+				frames = Paths.getSparrowAtlas('characters/sonic_forced','shared');
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
+
+				loadOffsets();
+				playAnim('idle');
+				setGraphicSize(Std.int(width * 0.7));
+				updateHitbox();
+
+				antialiasing = true;
+			case 'sonic-mad':
+				iconColor = 'FFAA6F';
+				frames = Paths.getSparrowAtlas('characters/sonic_mad','shared');
+				animation.addByPrefix('idle', "idle", 24, false);
+				animation.addByPrefix('singUP', "up", 24, false);
+				animation.addByPrefix('singRIGHT', "right", 24, false);
+				animation.addByPrefix('singLEFT', "left", 24, false);
+				animation.addByPrefix('singDOWN', "down", 24, false);
+
+				loadOffsets();
+				playAnim('idle');
+				setGraphicSize(Std.int(width * 0.7));
 				updateHitbox();
 
 				antialiasing = true;

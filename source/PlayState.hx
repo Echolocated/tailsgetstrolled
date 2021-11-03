@@ -799,6 +799,99 @@ class PlayState extends MusicBeatState
 		                  bgGirls.updateHitbox();
 		                  add(bgGirls);
 		          }
+		          case 'talentless-fox':
+		          {
+					if(SONG.noBG!=true){
+					defaultCamZoom = 1;
+					curStage = 'stage';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback'));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					add(bg);
+
+					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);
+
+					var stageCurtains:FlxSprite = new FlxSprite(-450, -150).loadGraphic(Paths.image('stagecurtains'));
+					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.87));
+					stageCurtains.updateHitbox();
+					stageCurtains.antialiasing = true;
+					stageCurtains.scrollFactor.set(1.1, 1.1);
+					stageCurtains.active = false;
+
+					add(stageCurtains);
+								}else{
+									curStage='custom';
+								}
+								  }
+		          case 'no-villains':
+		          {
+					if(SONG.noBG!=true){
+					defaultCamZoom = 1;
+					curStage = 'stage3';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback3'));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					add(bg);
+
+					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront3'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);
+
+					var stageCurtains:FlxSprite = new FlxSprite(-450, -150).loadGraphic(Paths.image('stagecurtains3'));
+					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.87));
+					stageCurtains.updateHitbox();
+					stageCurtains.antialiasing = true;
+					stageCurtains.scrollFactor.set(1.1, 1.1);
+					stageCurtains.active = false;
+
+					add(stageCurtains);
+								}else{
+									curStage='custom';
+								}
+				  }
+		          case 'tsuraran-fox':
+		          {
+					if(SONG.noBG!=true){
+					defaultCamZoom = 1;
+					curStage = 'stage2';
+					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback2'));
+					bg.antialiasing = true;
+					bg.scrollFactor.set(0.9, 0.9);
+					bg.active = false;
+					add(bg);
+
+					var stageFront:FlxSprite = new FlxSprite(-650, 600).loadGraphic(Paths.image('stagefront2'));
+					stageFront.setGraphicSize(Std.int(stageFront.width * 1.1));
+					stageFront.updateHitbox();
+					stageFront.antialiasing = true;
+					stageFront.scrollFactor.set(0.9, 0.9);
+					stageFront.active = false;
+					add(stageFront);
+
+					var stageCurtains:FlxSprite = new FlxSprite(-450, -150).loadGraphic(Paths.image('stagecurtains2'));
+					stageCurtains.setGraphicSize(Std.int(stageCurtains.width * 0.87));
+					stageCurtains.updateHitbox();
+					stageCurtains.antialiasing = true;
+					stageCurtains.scrollFactor.set(1.1, 1.1);
+					stageCurtains.active = false;
+
+					add(stageCurtains);
+								}else{
+									curStage='custom';
+								}
+		          }
 		          case 'thorns':
 		          {
 		                  curStage = 'schoolEvil';
@@ -946,6 +1039,18 @@ class PlayState extends MusicBeatState
 			case "tails":
 				dad.x -= 100;
 				dad.y += 525;
+			case "swagtails":
+				dad.x -= 100;
+				dad.y += 525;
+			case "sonic":
+				dad.x -= 100;
+				dad.y += 565;
+			case "sonic-forced":
+				dad.x -= 100;
+				dad.y += 565;
+			case "sonic-mad":
+				dad.x -= 100;
+				dad.y += 565;
 			case "monster":
 				dad.y += 100;
 			case 'monster-christmas':
@@ -972,7 +1077,7 @@ class PlayState extends MusicBeatState
 			case 'bf-pixel':
 				dad.y += 570;
 				dad.x += 200;
-			case 'bf' | 'bf-car' | 'bf-christmas':
+			case 'bf' | 'bf-car' | 'bf-christmas' | 'bf-better':
 				dad.y += 350;
 		}
 
@@ -2193,6 +2298,8 @@ class PlayState extends MusicBeatState
 					case 'senpai-angry':
 						camFollow.y = dad.getMidpoint().y - 430;
 						camFollow.x = dad.getMidpoint().x - 100;
+					case 'sonic' | 'sonic-forced' | 'sonic-mad':
+						camFollow.y = dad.getMidpoint().y - 30;
 				}
 
 				if (dad.curCharacter == 'mom')

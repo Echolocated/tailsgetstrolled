@@ -2,3 +2,7 @@ bf
 gf
 bf-neb
 tails
+swagtails
+sonic
+sonic-forced
+sonic-mad

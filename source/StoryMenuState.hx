@@ -89,7 +89,7 @@ class StoryMenuState extends MusicBeatState
 
 	var unlockedSpaces:Array<SpaceData> = [
 		{cutscene: "tailsGetsTrolled", song: "talentless-fox", image: "ch_1" },
-		{cutscene: "tailsGetsTrolled", song: "talentless-fox", image: "ch_2" }
+		{cutscene: "sonicGetsTrolled", song: "no-villains", image: "ch_2" }
 	];
 
 	function onMouseDown(object:FlxObject){
