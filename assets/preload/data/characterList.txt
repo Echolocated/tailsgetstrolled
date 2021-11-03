@@ -1,6 +1,6 @@
 bf
+bf-better
 gf
-bf-neb
 tails
 swagtails
 sonic

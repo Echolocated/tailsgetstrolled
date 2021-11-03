@@ -496,7 +496,7 @@ class Character extends FlxSprite
 
 				loadOffsets();
 				playAnim('idle');
-				setGraphicSize(Std.int(width * 0.7));
+				setGraphicSize(Std.int(width * 0.65));
 				updateHitbox();
 
 				antialiasing = true;

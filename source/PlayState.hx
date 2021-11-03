@@ -868,7 +868,7 @@ class PlayState extends MusicBeatState
 					curStage = 'stage2';
 					var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic(Paths.image('stageback2'));
 					bg.antialiasing = true;
-					bg.scrollFactor.set(0.9, 0.9);
+					bg.scrollFactor.set(0.4, .4);
 					bg.active = false;
 					add(bg);
 
@@ -1690,7 +1690,7 @@ class PlayState extends MusicBeatState
 		for (section in noteData)
 		{
 			var coolSection:Int = Std.int(section.lengthInSteps / 4);
-
+			section.sectionNotes.sort((a,b)->Std.int(a[0]-b[0]));
 			for (songNotes in section.sectionNotes)
 			{
 				var daStrumTime:Float = songNotes[0];
