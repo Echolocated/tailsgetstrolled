@@ -4,6 +4,7 @@ import flixel.FlxSprite;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.math.FlxMath;
 import flixel.util.FlxColor;
+import Options;
 #if polymod
 import polymod.format.ParseRules.TargetSignatureElement;
 #end
@@ -36,7 +37,10 @@ class NoteGraphic extends FlxSprite
 				updateHitbox();
 
 			default:
-				frames = Paths.getSparrowAtlas('NOTE_assets',"shared");
+				/*if(OptionUtils.options.shitNotes)
+					frames = Paths.getSparrowAtlas('SHIT_NOTE_assets',"shared");
+				else*/
+					frames = Paths.getSparrowAtlas('NOTE_assets',"shared");
 
 				animation.addByPrefix('greenScroll', 'green0');
 				animation.addByPrefix('redScroll', 'red0');

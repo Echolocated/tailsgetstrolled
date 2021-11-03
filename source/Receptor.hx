@@ -5,7 +5,7 @@ import flixel.FlxSprite;
 import flixel.animation.FlxBaseAnimation;
 import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxSpriteGroup;
-
+import Options;
 // TODO: have the receptor manage its own notes n shit
 
 class Receptor extends FlxSprite {
@@ -17,7 +17,7 @@ class Receptor extends FlxSprite {
   public var defaultX:Float = 0;
   public var defaultY:Float = 0;
   public var incomingNoteAlpha:Float = 1;
-  
+
 
   public function new(x:Float,y:Float,noteData:Int,skin:String='default',daScale:Float=.7){
     super(x,y);
@@ -30,7 +30,10 @@ class Receptor extends FlxSprite {
 
     switch(skin){
       case 'default':
-        frames = Paths.getSparrowAtlas('NOTE_assets','shared');
+        /*if(OptionUtils.options.shitNotes)
+					frames = Paths.getSparrowAtlas('SHIT_NOTE_assets',"shared");
+				else*/
+					frames = Paths.getSparrowAtlas('NOTE_assets',"shared");
 
         antialiasing = true;
         setGraphicSize(Std.int(width * daScale));

@@ -127,25 +127,7 @@ class MainMenuState extends MusicBeatState
 							switch (daChoice)
 							{
 								case 'story mode':
-									selectedSomethin = true;
-									PlayState.storyPlaylist = ["talentless-fox"];
-									PlayState.isStoryMode = true;
-
-									PlayState.storyDifficulty = 2;
-
-									PlayState.storyWeek = 0;
-									PlayState.campaignScore = 0;
-
-									var video:MP4Handler = new MP4Handler();
-									if (!isCutscene) // Checks if the current week is Tutorial.
-									{
-										video.playMP4(Paths.video('tailsGetsTrolled'), new PlayState()); 
-										isCutscene = true;
-									}
-									else
-									{
-									}
-									PlayState.SONG = Song.loadFromJson("talentless-fox-hard", "talentless-fox");
+									FlxG.switchState(new StoryMenuState());
 								case 'freeplay':
 									FlxG.switchState(new FreeplayState());
 									trace("Freeplay Menu Selected");

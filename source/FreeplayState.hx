@@ -102,6 +102,8 @@ class FreeplayState extends MusicBeatState
 
 		if (StoryMenuState.weekUnlocked[2] || isDebug)
 			addWeek(['Talentless-Fox'], 1, ['tails']);
+			addWeek(['Tsuraran-Fox'], 1, ['swagtails']);
+			addWeek(['No-Villains'], 1, ['sonic']);
 
 		// LOAD MUSIC
 
