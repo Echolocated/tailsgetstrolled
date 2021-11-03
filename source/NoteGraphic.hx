@@ -37,9 +37,9 @@ class NoteGraphic extends FlxSprite
 				updateHitbox();
 
 			default:
-				if(OptionUtils.options.shitNotes)
+				/*if(OptionUtils.options.shitNotes)
 					frames = Paths.getSparrowAtlas('SHIT_NOTE_assets',"shared");
-				else
+				else*/
 					frames = Paths.getSparrowAtlas('NOTE_assets',"shared");
 
 				animation.addByPrefix('greenScroll', 'green0');

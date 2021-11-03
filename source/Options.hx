@@ -148,7 +148,7 @@ class Options
 	public var camFollowsAnims:Bool = false;
 
 	// preferences
-	public var shitNotes:Bool = true;
+	public var shitNotes:Bool = false;
 	public var pauseHoldAnims:Bool = true;
 	public var showMS:Bool = false;
 	public var showComboCounter:Bool = true;

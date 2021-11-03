@@ -30,9 +30,9 @@ class Receptor extends FlxSprite {
 
     switch(skin){
       case 'default':
-        if(OptionUtils.options.shitNotes)
+        /*if(OptionUtils.options.shitNotes)
 					frames = Paths.getSparrowAtlas('SHIT_NOTE_assets',"shared");
-				else
+				else*/
 					frames = Paths.getSparrowAtlas('NOTE_assets',"shared");
 
         antialiasing = true;
