@@ -69,6 +69,8 @@ class MP4Handler
 		vlcBitmap = new VlcBitmap();
 		vlcBitmap.set_height(FlxG.stage.stageHeight);
 		vlcBitmap.set_width(FlxG.stage.stageHeight * (16 / 9));
+		
+		vlcBitmap.volume = 1;
 
 		trace("Setting width to " + FlxG.stage.stageHeight * (16 / 9));
 		trace("Setting height to " + FlxG.stage.stageHeight);
@@ -89,12 +91,12 @@ class MP4Handler
 
 		FlxG.addChildBelowMouse(vlcBitmap);
 		vlcBitmap.play(checkFile(path));
-		
+
 		if (outputTo != null)
 		{
 			// lol this is bad kek
 			vlcBitmap.alpha = 0;
-	
+
 			sprite = outputTo;
 		}
 		#end
@@ -120,19 +122,17 @@ class MP4Handler
 	{
 		trace("video loaded!");
 		if (sprite != null)
-			sprite.loadGraphic(vlcBitmap.bitmapData);	
+			sprite.loadGraphic(vlcBitmap.bitmapData);
 	}
 
 	public function onVLCComplete()
 	{
+		FlxG.autoPause = true;
 		vlcBitmap.stop();
 
 		// Clean player, just in case! Actually no.
 
 		FlxG.camera.fade(FlxColor.BLACK, 0, false);
-
-
-		trace("Big, Big Chungus, Big Chungus!");
 
 		new FlxTimer().start(0.3, function (tmr:FlxTimer)
 		{
@@ -145,9 +145,9 @@ class MP4Handler
 			if (FlxG.game.contains(vlcBitmap))
 			{
 				FlxG.game.removeChild(vlcBitmap);
-			}	
+			}
 		});
-		
+
 
 	}
 
