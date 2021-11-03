@@ -69,7 +69,7 @@ class MP4Handler
 		vlcBitmap = new VlcBitmap();
 		vlcBitmap.set_height(FlxG.stage.stageHeight);
 		vlcBitmap.set_width(FlxG.stage.stageHeight * (16 / 9));
-		
+
 		vlcBitmap.volume = 1;
 
 		trace("Setting width to " + FlxG.stage.stageHeight * (16 / 9));
@@ -168,6 +168,7 @@ class MP4Handler
 				onVLCComplete();
 			}
 		}
+		trace(FlxG.sound.volume + 0.3);
 		vlcBitmap.volume = FlxG.sound.volume + 0.3; // shitty volume fix. then make it louder.
 		if (FlxG.sound.volume <= 0.1) vlcBitmap.volume = 0;
 	}
