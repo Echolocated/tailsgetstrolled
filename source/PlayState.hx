@@ -57,7 +57,7 @@ import flash.events.KeyboardEvent;
 import Controls;
 import Controls.Control;
 
-#if windows
+#if desktop
 import vm.lua.LuaVM;
 import vm.lua.Exception;
 import Sys;
